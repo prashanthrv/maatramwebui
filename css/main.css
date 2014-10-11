@@ -1,19 +1,45 @@
 .submenu{
 	width: 100%;
+	padding:12px 0px 12px 20px;
+	margin-top: 1px;
+	border:1px solid #eee;
+	color:#428bca;
 }
 
 .submenu:hover{
+	background-color:#eee;
+	cursor: pointer;
+
 	
 }
 
 .type1{
-	
 	width: 100%;
 	clear:right;
 	margin-top:20px;
+	height : 180px;
+}
+
+.type1container2{
+	float: left;
+	width: 300px;
+
+}
+
+.type1container3{
+	float: right;
+	width: 150px;
+
+}
+
+.type1pic{
+	float :left;
+	height:100px;
+	margin-right:10px
 }
 
 .type1tittle{
+	float: left;
 
 }
 
@@ -22,6 +48,9 @@
 }
 
 .type1button{
+
+	width: 120px;
+	margin-top: 5px;
 
 }
 .bs-callout+.bs-callout {
