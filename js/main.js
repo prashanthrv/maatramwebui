@@ -1,5 +1,6 @@
 var appName="";
 var data;
+var currentMainPage;
 function setMainVars(){
 //jsoncall for main variables
 appName="Maatran";
@@ -8,17 +9,12 @@ $("#appName").html(appName);
 
 
 function renderDonationPage(){
-	
-
-}
-
-function renderEventPage(){
-
-	data=[{ "id" : "1", "title" : "test1", "description" : "asdf", "type" : "type1", "moneyneeded":3400, "moneyraised":2000},
-  			  { "id" : "2", "title" : "test2", "description" : "asdf", "type" : "type1", "moneyneeded":3400, "moneyraised":2000},
-  			  { "id" : "3", "title" : "test3", "description" : "asdf", "type" : "type2", "moneyneeded":3400, "moneyraised":2000},
-  			  { "id" : "4", "title" : "test4", "description" : "asdf", "type" : "type2", "moneyneeded":3400, "moneyraised":2000},
-  			  { "id" : "5", "title" : "test5", "description" : "asdf", "type" : "type3", "moneyneeded":3400, "moneyraised":2000}];
+	$("#subMenu").html('');
+	data=[{ "id" : "1", "title" : "test1", "description" : "asdf", "type" : "educate", "moneyneeded":3400, "moneyraised":2000},
+  			  { "id" : "2", "title" : "test2", "description" : "asdf", "type" : "educate", "moneyneeded":3400, "moneyraised":2000},
+  			  { "id" : "3", "title" : "test3", "description" : "asdf", "type" : "educate", "moneyneeded":3400, "moneyraised":2000},
+  			  { "id" : "4", "title" : "test4", "description" : "asdf", "type" : "food", "moneyneeded":3400, "moneyraised":2000},
+  			  { "id" : "5", "title" : "test5", "description" : "asdf", "type" : "food", "moneyneeded":3400, "moneyraised":2000}];
   	var type=[];
   	var count=0;
   	var flag=0;
@@ -36,15 +32,24 @@ function renderEventPage(){
     	}
     	flag=0;
 		});
+
+	$("#subMenu").css("padding-top","20px").append("<div class='submenu' id='blood' >Donate Blood</div>");
+
+}
+
+function renderEventPage(){
+
+
 }
 
 
 
 $(document).on("click",".page-scroll",function(){
 	var base=this;
-	if($(this).children("a").text()==="Donations"){
+
+	if($(this).children("a").text()==="Donations" && $(this).children("a").text() != currentMainPage){
 		renderDonationPage();
-	}else if($(this).children("a").text()==="Events"){
+	}else if($(this).children("a").text()==="Events" && $(this).children("a").text() != currentMainPage){
 		renderEventPage();
 	}
 });
@@ -84,5 +89,16 @@ $(document).on("click",".submenu",function(){
 		}
     });
 	
+});
+
+
+$(document).on("click","#blood",function(){
+	$("#subBody").html('');
+	$("#subBody").css('margin-top','20px').append("<div class='row' style='margin-bottom:10px'><div class='col-md-3' style='text-align:right;padding-top:10px;'><label>Name</label></div><div class='col-md-1'></div><div class='col-md-7'><input class='form-control' placeholder='Username' name='username'></div></div>");
+	$("#subBody").css('margin-top','20px').append("<div class='row' style='margin-bottom:10px'><div class='col-md-3' style='text-align:right;padding-top:10px;'><label>Email</label></div><div class='col-md-1'></div><div class='col-md-7'><input class='form-control' placeholder='Email' name='email'></div></div>");
+	$("#subBody").css('margin-top','20px').append("<div class='row' style='margin-bottom:10px'><div class='col-md-3' style='text-align:right;padding-top:10px;'><label>Phone Number</label></div><div class='col-md-1'></div><div class='col-md-7'><input class='form-control' placeholder='Phone Number' name='phone'></div></div>");
+	$("#subBody").css('margin-top','20px').append("<div class='row' style='margin-bottom:10px'><div class='col-md-3' style='text-align:right;padding-top:10px;'><label>Blood Group</label></div><div class='col-md-1'></div><div class='col-md-7'><input class='form-control' placeholder='Blood Group' name='blood'></div></div>");
+	$("#subBody").css('margin-top','20px').append("<div class='row' style='margin-bottom:10px'><div class='col-md-3' style='text-align:right;padding-top:10px;'><label>Address</label></div><div class='col-md-1'></div><div class='col-md-7'><input class='form-control' placeholder='Address' name='address'></div></div>");
+	$("#subBody").css('margin-top','20px').append("<div class='row' style='margin-bottom:10px'><div class='col-md-3' style='text-align:right;padding-top:10px;'><label>Available Time</label></div><div class='col-md-1'></div><div class='col-md-7'><input class='form-control' placeholder='Available Time' name='time'></div></div>");
 });
 

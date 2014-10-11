@@ -13,41 +13,41 @@
 	
 }
 
-.type1{
+.educate{
 	width: 100%;
 	clear:right;
 	margin-top:20px;
 	height : 180px;
 }
 
-.type1container2{
+.educatecontainer2{
 	float: left;
 	width: 300px;
 
 }
 
-.type1container3{
+.educatecontainer3{
 	float: right;
 	width: 150px;
 
 }
 
-.type1pic{
+.educatepic{
 	float :left;
 	height:100px;
 	margin-right:10px
 }
 
-.type1tittle{
+.educatetittle{
 	float: left;
 
 }
 
-..type1description{
+..educatedescription{
 
 }
 
-.type1button{
+.educatebutton{
 
 	width: 120px;
 	margin-top: 5px;
