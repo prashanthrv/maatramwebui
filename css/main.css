@@ -1,0 +1,42 @@
+.submenu{
+	width: 100%;
+}
+
+.submenu:hover{
+	
+}
+
+.type1{
+	
+	width: 100%;
+	clear:right;
+	margin-top:20px;
+}
+
+.type1tittle{
+
+}
+
+..type1description{
+
+}
+
+.type1button{
+
+}
+.bs-callout+.bs-callout {
+margin-top: -5px;
+}
+.bs-callout-info {
+border-left-color: #5bc0de;
+}
+.bs-callout {
+padding: 20px;
+margin: 20px 0;
+margin-left: 10px;
+border: 1px solid #eee;
+border-left-width: 5px;
+border-radius: 3px;
+border-left-color:#5bc0de;
+}
+
