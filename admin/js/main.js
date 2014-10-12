@@ -33,6 +33,36 @@ function logOut(){
     setCookie("loginFlag","false",1);
     location.href="login.html";
 }
+
+function getOrg(){
+
+    //Json Request 
+
+
+    $("#org").html('');
+    $(data).each(function(i,val){
+        
+            $("#org").append('<option>'+val.id+' - '+val.name+'</option>');
+    });
+
+}
+
+function addEventsPage(){
+    //getOrg();
+
+    $("#listDonations").hide();
+    $("#addNewDonation").hide();
+    $("#backDonation").show();
+    $("#addUpdateDonations").show();
+}
+
+function backEventsPage(){
+    $("#listDonations").show();
+    $("#addNewDonation").show();
+    $("#backDonation").hide();
+    $("#addUpdateDonations").hide();
+}
+
 function addDonationsPage(){
     $("#listDonations").hide();
     $("#addNewDonation").hide();

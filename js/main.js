@@ -11,7 +11,7 @@ $("#appName").html(appName);
 function renderDonationPage(){
 	$("#subMenu").html('');
 	$.ajax({
-			url:'http://192.168.115.73:8080/NGO/api/donations/student',
+			url:'http://localhost/NGO/api/donations/student',
 			method:'GET',
 			type:'json',
 			async:false,
@@ -47,15 +47,27 @@ function renderEventPage(){
 
 }
 
+function renderHomePage(){
+	$("#mainBody").html('');
+	$("#mainBody").append("<div class='row'><div class='col-md-4' style='padding: 20px 0px 20px 0px;'><image src='images/home.jpg' style='width:100%' /></div><div class='col-md-8' style='padding: 20px 0px 0px 40px;text-align: justify;min-height: 600px;'><b style='font-family: &quot;Lato&quot;,&quot;Helvetica Neue&quot;,Helvetica,Arial,sans-serif;font-size: 21px;padding-bottom: 32px;'>Welcome to Maatram Educational and Charitable Trust!</b><br /></br><p>It gives us great pleasure to introduce to you the Maatram Educational and Charitable Trust. We are a group of friends whose ideal in life is to help where we can, how we can and whenever we can. This help is focussed towards the poor and the needy who live among us within our society and endeavours to bring about a change in their life - a MAATRAM. This is a organisation run by volunteers who are sincere and well established professionals and who are interested to see that every bit of donations reach the needy and brilliant students, without which, they would have perished in the darkness of the Social abyss.</p></div></div>");
+
+}
+
 
 
 $(document).on("click",".page-scroll",function(){
 	var base=this;
 
 	if($(this).children("a").text()==="Donations" && $(this).children("a").text() != currentMainPage){
+		currentMainPage="Donations";
 		renderDonationPage();
 	}else if($(this).children("a").text()==="Events" && $(this).children("a").text() != currentMainPage){
+		currentMainPage="Events";
 		renderEventPage();
+	}else if($(this).children("a").text()==="Home" && $(this).children("a").text() != currentMainPage){
+		currentMainPage="Home";
+		renderHomePage();
+
 	}
 });
 
