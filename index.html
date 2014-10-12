@@ -40,7 +40,7 @@
 <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;language=en"></script>
 </head>
 
-<body id="page-top" class="index">
+<body id="page-top" onload="renderHomePage()" class="index">
 
     <!-- Navigation -->
     <nav class="navbar navbar-default" style="padding:15px 0px 15px;">
@@ -53,7 +53,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" id="appName" href="#">Matram</a>
+                <a class="navbar-brand" id="appName" href="#">Maatram</a>
             </div>
 
 
@@ -88,10 +88,10 @@
 
 
     <div class="container" id="mainBody" style="margin-top:-20px;">
-            <div class="row" style="min-height:350px;">
-                <div class="col-md-3" id="subMenu" style="padding:0px;height:100%;">
+            <div class="row" style="">
+                <div class="col-md-3" id="subMenu" style="padding:0px;height:auto;">
                 </div>
-                <div class="col-md-9" id="subBody" style="padding:0px;height:auto">
+                <div class="col-md-9" id="subBody" style="padding:0px;height:auto;">	
                 </div>
             </div>
     </div>
@@ -151,7 +151,43 @@
             </div>
         </div>
     </footer>
-
+    <div id="modalBank" style="display:none;">
+    <table width="550" height="19" cellspacing="0" cellpadding="0" border="0" class="maatrambox">
+              <tbody><tr>
+                <td height="50" bgcolor="#90B848" style="padding-left:10px;" class="white14bold">Maatram Canara Bank Account Details</td>
+              </tr>
+              <tr>
+                <td align="left" style="padding-left:10px;"><table width="100%" cellspacing="0" cellpadding="0" border="0">
+                    <tbody><tr>
+                      <td colspan="2">&nbsp;</td>
+                    </tr>
+                    <tr>
+                      <td width="31.5%" height="20" align="left"><h3 style="font-size:14px;">Account Name :</h3></td>
+                      <td width="68.5%" align="left"><h2 style="font-size:14px;">Maatram Educational and Charitable Trust</h2></td>
+                    </tr>
+                    <tr>
+                      <td height="20" align="left"><h3 style="font-size:14px;">Account Number :</h3></td>
+                      <td align="left"><h2 style="font-size:14px;">3319101000711</h2></td>
+                    </tr>
+                    <tr>
+                      <td height="20" align="left"><h3 style="font-size:14px;">IFSC Code :</h3></td>
+                      <td align="left"><h2 style="font-size:14px;">CNRB0003319</h2></td>
+                    </tr>
+                    <tr>
+                      <td height="20" align="left"><h3 style="font-size:14px;">Bank :</h3></td>
+                      <td align="left"><h2 style="font-size:14px;">Canara Bank</h2></td>
+                    </tr>
+                    <tr>
+                      <td height="20" align="left"><h3 style="font-size:14px;">Branch :</h3></td>
+                      <td align="left"><h2 style="font-size:14px;">Kottivakkam</h2></td>
+                    </tr>
+                    <tr>
+                      <td colspan="2">&nbsp;</td>
+                    </tr>
+                </tbody></table></td>
+              </tr>
+          </tbody></table>
+    </div>
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 
