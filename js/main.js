@@ -10,6 +10,7 @@ $("#appName").html(appName);
 
 function renderDonationPage(){
 	$("#subMenu").html('');
+	$("#subBody").html('');
 	$.ajax({
 			url:'http://localhost/NGO/api/donations/student',
 			method:'GET',
@@ -43,8 +44,27 @@ function renderDonationPage(){
 }
 
 function renderEventPage(){
-
-
+	$("#subMenu").html('');
+	$("#subBody").html('');
+	var type=[];
+  	var count=0;
+  	var flag=0;
+  	$("#subMenu").css("padding-top","20px").append("<div class='submenuEvents' >All</div>");
+	data=[{'id':1,title:'Blood Camp 1',start:'2014-10-19',type:'Blood'},{'id':2,title:'Food Camp 1',start:'2014-10-15',type:'Food'}];
+		$(data).each(function(i,val){
+    	for(var i=0;i<count;i++){
+    		if(val.type===type[i]){
+    			flag=1;
+    			break;
+    		}
+    	}
+    	if(flag==0){
+    		$("#subMenu").css("padding-top","20px").append("<div class='submenuEvents' >"+val.type	+"</div>");
+    		type[count]=val.type;
+    		count++;
+    	}
+    	flag=0;
+		});
 }
 
 function renderHomePage(){
@@ -70,8 +90,47 @@ $(document).on("click",".page-scroll",function(){
 
 	}
 });
-
-
+$(document).on("click",".submenuEvents",function(){
+renderEventsCalendar('september',2014);	
+});
+function renderEventsCalendar(month,year){
+	$("#subBody").html('<div id="calendar" style="margin-top:20px;margin-bottom:10px;"></div><div id="singleEvent" style="display:none; margin-left:10px;"></div>');
+	console.log(data);
+	//$("#subMenu").html('<div id="calendar"></div>');
+			$('#calendar').fullCalendar({
+			header: {
+				left: 'prev,next today',
+				center: 'title',
+				right: 'month,basicWeek,basicDay'
+			},
+			defaultDate: '2014-10-12',
+			height: 500,
+			editable: true,
+			eventLimit: true, // allow "more" link when too many events
+			events: data,
+			eventClick: function(event) {
+	        if (event.id) {
+	        	singleEventClick(2);
+	            return false;
+	        }
+	    	}
+		});
+	}
+function singleEventClick(id){
+	$("#calendar").hide();
+	$("#singleEvent").show();
+	$("#singleEvent").html('');
+	data2={id:2,title:'Blood Camp 2',description:'Blood Camp', location:'', date:'', venue:'', category:'blood',resourceRequired:'500',resourceRaised:'230'};
+	var singleEventText="<div style='margin-top:20px;'><div id='eventTitle' style='font-weight:bold; font-size:20px; float:left;'>"+data2.title+"</div><button id='backButton' onclick='backtoAlEvents()' style='float:right;' class='btn btn-info'><i class='fa fa-chevron-circle-left fa-fw'></i>Back</button></div><div id='eventPic' style='clear:both;'><img src='images/eventEmpty.jpg' style='width:500px; height:300px;'/></div><div id='description'>Description:"+data2.description+"</div><div id='location'>Location:</div><div id='map-canvas' style='width: 100%; height: 100%'></div>";
+	$("#singleEvent").html(singleEventText);
+	$('#map-canvas').html('<img style="margin-bottom:20px;" src="https://maps.googleapis.com/maps/api/staticmap?center=Chennai&zoom=13&size=400x500&markers=color:blue%7Clabel:S%7C12.920729,80.231093" />');
+}
+function backtoAlEvents(){
+	$("#calendar").show();
+	$("#singleEvent").hide();
+	$("#calendar").html('');
+	renderEventsCalendar('september',2014);
+}
 $(document).on("click",".submenu",function(){
 	$("#subBody").html('');
 	var base=this;

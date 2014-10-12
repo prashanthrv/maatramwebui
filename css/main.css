@@ -1,4 +1,4 @@
-.submenu{
+.submenu, .submenuEvents{
 	width: 100%;
 	padding:12px 0px 12px 20px;
 	margin-top: 1px;
@@ -6,7 +6,7 @@
 	color:#428bca;
 }
 
-.submenu:hover{
+.submenu:hover, .submenuEvents:hover{
 	background-color:#eee;
 	cursor: pointer;
 

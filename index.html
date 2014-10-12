@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -28,7 +29,15 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
+        <style type="text/css">
+      html, body, #map-canvas { height: 100%; margin: 0; padding: 0;}
+    </style>
+    <link href="css/fullcalendar.css" rel="stylesheet">
+<link href="css/fullcalendar.print.css" rel="stylesheet" media="print">
+<script src="js/lib/moment.min.js"></script>
+<script src="js/jquery-1.11.0.js"></script>
+<script src="js/fullcalendar.min.js"></script>
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;language=en"></script>
 </head>
 
 <body id="page-top" class="index">
@@ -54,21 +63,18 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="hidden active">
-                        <a href="#page-top"></a>
+                        <a href="#"></a>
                     </li><li class="page-scroll">
-                        <a href="#portfolio">Home</a>
+                        <a href="#">Home</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#portfolio">Donations</a>
+                        <a href="#">Donations</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#about">Events</a>
+                        <a href="#">Events</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#contact">Contact Us</a>
-                    </li>
-                    <li class="page-scroll">
-                        <a href="#contact">About Us</a>
+                        <a href="#">Contact Us</a>
                     </li>
                 </ul>
             </div>
@@ -145,8 +151,6 @@
             </div>
         </div>
     </footer>
-    <!-- jQuery Version 1.11.0 -->
-    <script src="js/jquery-1.11.0.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
